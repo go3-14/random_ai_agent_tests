@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, FolderGit } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import TiltCard from "./TiltCard";
+import SpotlightCard from "./SpotlightCard";
+import GlitchText from "./GlitchText";
 import projects from "../data/projects";
 
 const filters = [
@@ -27,9 +28,9 @@ export default function Projects() {
     >
       <div className="max-w-6xl mx-auto w-full">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold font-sans text-white mb-2">
+          <GlitchText className="text-3xl md:text-4xl font-bold font-sans text-white mb-2">
             Featured Projects
-          </h2>
+          </GlitchText>
           <p className="text-slate-400 font-mono text-sm mb-8">
             Security tools and backend systems I've built.
           </p>
@@ -45,7 +46,7 @@ export default function Projects() {
                   ${
                     active === f.key
                       ? "border-accent text-accent bg-accent/10"
-                      : "border-slate-700 text-slate-400 hover:border-slate-500"
+                      : "border-slate-800 text-slate-500 hover:border-slate-600 hover:text-slate-300"
                   }`}
               >
                 {f.label}
@@ -54,7 +55,7 @@ export default function Projects() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, i) => (
               <motion.div
@@ -63,24 +64,36 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 30 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <TiltCard maxTilt={6} className="group h-full">
-                  <div className="relative border border-slate-800 group-hover:border-accent/40 
-                              rounded-lg p-6 bg-slate-950/50 overflow-hidden transition-colors h-full
-                              hover:shadow-lg hover:shadow-accent/10">
-                    <div className="relative z-10">
-                      <h3 className="text-lg font-mono text-white mb-2 group-hover:text-accent transition-colors">
+                <SpotlightCard className="group h-full">
+                  <div className="border border-slate-800 group-hover:border-accent/40 
+                              rounded-lg bg-surface-light/20 h-full overflow-hidden transition-colors">
+                    <div className="h-32 bg-surface-light/50 border-b border-slate-800 flex items-center justify-center overflow-hidden">
+                      <div className="w-full h-full p-4 font-mono text-[10px] text-slate-700 leading-relaxed opacity-40">
+                        {`// ${project.title.replace(/\s/g, "").toLowerCase()}`}
+                        <br />
+                        {`import { ${project.tags[0]} } from "core"`}
+                        <br />
+                        {`const app = new ${project.tags[1] || "Service"}()`}
+                        <br />
+                        {`app.run({ port: 443, ssl: true })`}
+                        <br />
+                        {`// Deployment: operational`}
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-base font-mono text-white mb-2 group-hover:text-accent transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-slate-400 text-sm font-mono mb-4 leading-relaxed">
+                      <p className="text-slate-400 text-xs font-mono mb-4 leading-relaxed">
                         {project.desc}
                       </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-1.5 mb-4">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-1 text-[10px] font-mono border border-slate-700 text-slate-400
+                            className="px-2 py-0.5 text-[10px] font-mono border border-slate-800 text-slate-500
                                       group-hover:border-accent/30 group-hover:text-accent/70 transition-colors"
                           >
                             {tag}
@@ -90,20 +103,20 @@ export default function Projects() {
                       <div className="flex gap-3">
                         <a
                           href={project.github}
-                          className="text-slate-500 hover:text-accent transition-colors"
+                          className="text-slate-600 hover:text-accent transition-colors"
                         >
                           <FolderGit className="w-4 h-4" />
                         </a>
                         <a
                           href={project.live}
-                          className="text-slate-500 hover:text-accent transition-colors"
+                          className="text-slate-600 hover:text-accent transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </div>
                     </div>
                   </div>
-                </TiltCard>
+                </SpotlightCard>
               </motion.div>
             ))}
           </AnimatePresence>

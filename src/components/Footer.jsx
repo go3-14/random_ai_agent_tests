@@ -1,18 +1,16 @@
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 border-t border-slate-800 snap-start">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-slate-600 font-mono text-xs">
-          <span className="text-accent">&gt;</span> Built with React + Tailwind CSS + Framer Motion
+    <footer className="py-6 px-4 border-t border-slate-800 snap-start bg-surface">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <p className="text-slate-600 font-mono text-[11px] flex items-center gap-2">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          UPTIME: 5y 2m &mdash; STATUS: CONNECTED
         </p>
-        <p className="text-slate-600 font-mono text-xs">
-          &copy; {new Date().getFullYear()}{" "}
-          <span className="text-slate-400 hover:text-accent transition-colors">cyber-engineer</span>
-          . All rights reserved.
+        <p className="text-slate-600 font-mono text-[11px]">
+          &copy; {new Date().getFullYear()} cyber-engineer. All rights reserved.
         </p>
-        <p className="text-slate-600 font-mono text-xs flex items-center gap-1.5">
-          <span className="inline-block w-2 h-2 rounded-full bg-accent animate-pulse" />
-          system secured
+        <p className="text-slate-600 font-mono text-[11px] hover:text-accent transition-colors">
+          hello@cyberport.io
         </p>
       </div>
     </footer>

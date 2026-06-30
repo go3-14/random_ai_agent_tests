@@ -1,4 +1,7 @@
+import Navbar from "./components/Navbar";
+import CustomCursor from "./components/CustomCursor";
 import ScrollProgress from "./components/ScrollProgress";
+import SmoothScroll from "./components/SmoothScroll";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -9,17 +12,26 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="bg-slate-950 text-slate-300 min-h-screen">
+    <div className="bg-surface text-slate-300 min-h-screen">
+      <CustomCursor />
+      <Navbar />
       <ScrollProgress />
-      <main className="snap-y snap-mandatory overflow-y-auto h-screen">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Terminal />
-        <Contact />
-        <Footer />
-      </main>
+      <SmoothScroll>
+        <main>
+          <Hero />
+          <div className="section-divider" />
+          <About />
+          <div className="section-divider" />
+          <Skills />
+          <div className="section-divider" />
+          <Projects />
+          <div className="section-divider" />
+          <Terminal />
+          <div className="section-divider" />
+          <Contact />
+          <Footer />
+        </main>
+      </SmoothScroll>
     </div>
   );
 }
