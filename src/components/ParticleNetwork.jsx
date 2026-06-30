@@ -13,9 +13,9 @@ export default function ParticleNetwork() {
     const PARTICLE_COUNT = 80;
     const CONNECT_DIST = 120;
     const colors = [
-      "rgba(16, 185, 129,",  // emerald-500
-      "rgba(52, 211, 153,",  // emerald-400
-      "rgba(5, 150, 105,",   // emerald-600
+      "rgba(34, 197, 94,",   // green-500
+      "rgba(74, 222, 128,",  // green-400
+      "rgba(22, 163, 74,",   // green-600
     ];
 
     const resize = () => {
@@ -76,7 +76,7 @@ export default function ParticleNetwork() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(16, 185, 129, ${opacity * 0.15})`;
+            ctx.strokeStyle = `rgba(34, 197, 94, ${opacity * 0.15})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

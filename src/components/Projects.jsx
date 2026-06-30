@@ -7,6 +7,7 @@ import projects from "../data/projects";
 
 const filters = [
   { key: "all", label: "All" },
+  { key: "security", label: "Security" },
   { key: "backend", label: "Backend" },
   { key: "tools", label: "Tools" },
 ];
@@ -30,7 +31,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-slate-400 font-mono text-sm mb-8">
-            Backend systems and developer tools I've built.
+            Security tools and backend systems I've built.
           </p>
         </ScrollReveal>
 

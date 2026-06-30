@@ -9,9 +9,12 @@ Available commands:
   skills     - List technical skills
   projects   - Show featured projects
   contact    - Get contact information
-  banner     - Display welcome banner
+  socials    - Display social links
+  neofetch   - System information
+  banner     - Display the banner
   ls         - List website sections
   cd [section] - Navigate to a section
+  sudo       - Elevate privileges
   clear      - Clear terminal
   history    - Show command history
 `,
@@ -20,36 +23,41 @@ Available commands:
     desc: "Display user identity",
     output: `
 > whoami
-
-  User:    backend-engineer
-  Role:    Backend Engineer / Systems Architect
-  Stack:   Python, Go, Rust, TypeScript
-  Status:  Open to opportunities
+┌───────────────────────────────────────┐
+│  User:    cyber-engineer              │
+│  Role:    Backend Engineer /          │
+│           Cybersecurity Specialist    │
+│  Status:  Active                      │
+│  Uptime:  5+ years in the field      │
+└───────────────────────────────────────┘
 `,
   },
   about: {
     desc: "Learn about me",
     output: `
-Hi! I'm a Backend Engineer with 5+ years of experience.
+Hi! I'm a Backend Engineer and Cybersecurity specialist.
+I build secure, scalable systems — and break things
+to make them stronger.
 
-I design and build:
+Passionate about:
   • Distributed systems & microservices
-  • High-performance REST & gRPC APIs
-  • Data pipelines & event-driven architectures
-  • Cloud infrastructure (AWS, Docker, K8s)
+  • Network security & penetration testing
+  • Zero-trust architecture
+  • Open source contributions
 
-I believe in clean code, comprehensive testing, and
-observability-first operations.
+When I'm not coding, I'm usually CTF-ing or reading
+security research papers.
 `,
   },
   skills: {
     desc: "List technical skills",
     output: `
 Languages:     Python, Go, Rust, JavaScript, TypeScript
-Backend:       Node.js, Express, Django, FastAPI, gRPC, GraphQL
-Databases:     PostgreSQL, MongoDB, Redis, Kafka
-DevOps:        Docker, Kubernetes, AWS, Terraform, CI/CD
-Tools:         Git, Linux, Prometheus, Grafana
+Backend:       Node.js, Express, Django, FastAPI
+Databases:     PostgreSQL, MongoDB, Redis
+DevOps:        Docker, Kubernetes, AWS, CI/CD, Linux
+Security:      Pentesting, Network Security, Cryptography
+Tools:         Wireshark, Burp Suite, Metasploit, Git
 Frontend:      React, Tailwind CSS
 
 Type 'cd skills' to scroll to the skills section.
@@ -59,12 +67,12 @@ Type 'cd skills' to scroll to the skills section.
     desc: "Show featured projects",
     output: `
 Featured Projects:
-  1. Event Pipeline     - 1M+ events/sec processing (Rust, Kafka)
-  2. API Gateway        - High-performance gateway (Go, Redis)
-  3. Auth Service       - OAuth2/JWT/MFA auth (Node.js, MongoDB)
-  4. Data Lake Platform - Scalable ETL pipelines (Python, AWS)
-  5. CLI Orchestrator   - Multi-service deployment tool (Rust)
-  6. Monitoring Stack   - Distributed tracing (Go, Prometheus)
+  1. SIEM Platform        - Real-time security monitoring (Rust)
+  2. API Gateway          - High-performance gateway (Go)
+  3. Vulnerability Scanner - Automated vuln scanning (Python)
+  4. Auth Service         - OAuth2/JWT/MFA auth (Node.js)
+  5. WAF Engine           - Web application firewall (Python)
+  6. CLI Pentest Toolkit  - Modular pentest tools (Rust)
 
 Type 'cd projects' to scroll to the projects section.
 `,
@@ -72,24 +80,62 @@ Type 'cd projects' to scroll to the projects section.
   contact: {
     desc: "Get contact information",
     output: `
-Email:    hello@engineering.dev
-GitHub:   github.com/backend-engineer
-LinkedIn: linkedin.com/in/backend-engineer
-Twitter:  @backend_eng
+Email:    hello@cyberport.io
+GitHub:   github.com/cyber-engineer
+LinkedIn: linkedin.com/in/cyber-engineer
+Twitter:  @cyber_engineer
 
 Type 'cd contact' to scroll to the contact section.
 `,
   },
-  banner: {
-    desc: "Display welcome banner",
+  socials: {
+    desc: "Display social links",
     output: `
-┌──────────────────────────────────────────┐
-│                                          │
-│   Backend Engineer                       │
-│   Building distributed systems           │
-│   that scale.                            │
-│                                          │
-└──────────────────────────────────────────┘
+GitHub    ->  github.com/cyber-engineer
+LinkedIn  ->  linkedin.com/in/cyber-engineer
+Twitter   ->  @cyber_engineer
+Email     ->  hello@cyberport.io
+`,
+  },
+  neofetch: {
+    desc: "System information",
+    output: [
+      "",
+      "              .:ossso:.               user@cyberport",
+      "            .+ssssssssso+.            -----------------",
+      "          :osssssssssssssso:          OS: Arch Linux x86_64",
+      "        -+sssssssssssssssss+-        Host: Custom Workstation",
+      "      .osssssssssssssssssssso.       Kernel: 6.8.0-arch1-1",
+      "     -+sssssssssssssssssssss+-       Uptime: 5 years, 2 months",
+      "    .ossssssssssssssssssssssso.      Shell: zsh 5.9",
+      "    ossssssssssssssssssssssssso      Terminal: Alacritty",
+      "    ossssssssssssssssssssssssso      CPU: AMD Ryzen 9 7950X (32)",
+      "    .ossssssssssssssssssssssso.      GPU: NVIDIA RTX 4090",
+      "     -+sssssssssssssssssssss+-       Memory: 64782MiB / 65536MiB",
+      "      .osssssssssssssssssssso.",
+      "        -+sssssssssssssssss+-",
+      "          :osssssssssssssso:",
+      "            .+ssssssssso+.",
+      "              .:ossso:.",
+      "",
+    ].join("\n"),
+  },
+  banner: {
+    desc: "Display the banner",
+    output: `
+╔═══════════════════════════════════════════╗
+║   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ║
+║   ██░ ▄▄ ██░   ██░ ██░ ██░    ██░       ║
+║   ██░ ██ ██░   ██░ ██░ ██░    ██░       ║
+║   ██░ ██ ██░   ██░ ██░ ██░    ██░       ║
+║   ██░ ██▄▄█░   ██▄▄▄▄█░ ██░    ██░       ║
+║   ██░  ▀▀▀█░   ▀▀▀▀▀██░ ██░    ██░       ║
+║   ██░    ██░        ██░ ██░    ██░       ║
+║   ██░ ██▄▄██░  ▄▄▄▄▄██▄▄█░    ██░       ║
+║   ██░ ▀▀▀▀▀█░  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀░       ║
+║                                           ║
+║   Backend Engineer / Cybersecurity        ║
+╚═══════════════════════════════════════════╝
 
 Type 'help' for available commands.
 `,
@@ -106,6 +152,16 @@ Sections:
   ./contact    - Contact information
 
 Use 'cd <section>' to navigate.
+`,
+  },
+  sudo: {
+    desc: "Elevate privileges",
+    output: `
+> sudo rm -rf /
+Permission denied: Nice try. You can't compromise
+a security engineer's portfolio that easily.
+
+( ͡° ͜ʖ ͡°)
 `,
   },
 };

@@ -18,12 +18,13 @@ export default function Contact() {
     >
       <div className="max-w-4xl mx-auto w-full text-center">
         <ScrollReveal>
+          <p className="font-mono text-accent text-sm mb-2">$ nc -v contact.cyberport.io 80</p>
           <h2 className="text-3xl md:text-4xl font-bold font-sans text-white mb-4">
             Get In Touch
           </h2>
           <p className="text-slate-400 font-mono text-sm max-w-xl mx-auto mb-10">
-            Whether you have a project, an opportunity, or just want to
-            connect — feel free to reach out.
+            Whether you have a project, security concern, or just want to
+            connect — my inbox is always open.
           </p>
         </ScrollReveal>
 
@@ -56,14 +57,17 @@ export default function Contact() {
           <div className="max-w-lg mx-auto">
             <div className="border border-accent/20 rounded-lg p-6 bg-slate-950/30">
               <p className="text-slate-400 font-mono text-sm mb-4">
-                Drop me an email
+                $ echo "Hello" | sendmail hello@cyberport.io
               </p>
               <a
-                href="mailto:hello@engineering.dev"
+                href="mailto:hello@cyberport.io"
                 className="text-accent font-mono text-lg hover:underline underline-offset-4"
               >
-                hello@engineering.dev
+                hello@cyberport.io
               </a>
+              <p className="text-slate-500 font-mono text-xs mt-2">
+                PGP key available on request
+              </p>
             </div>
           </div>
         </ScrollReveal>

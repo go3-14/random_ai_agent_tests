@@ -9,6 +9,7 @@ const categories = [
   { key: "languages", label: "Languages" },
   { key: "backend", label: "Backend" },
   { key: "database", label: "Database" },
+  { key: "security", label: "Security" },
   { key: "devops", label: "DevOps" },
   { key: "frontend", label: "Frontend" },
   { key: "tools", label: "Tools" },

@@ -1,4 +1,4 @@
-import { Code2, Server, Database, Cloud, Terminal, Globe } from "lucide-react";
+import { Shield, Code2, Server, Globe, Lock, Terminal, Database, Cloud, Bug, Network, Wifi, Key } from "lucide-react";
 
 const skills = [
   { name: "Python", icon: Code2, category: "languages" },
@@ -17,14 +17,14 @@ const skills = [
   { name: "Kubernetes", icon: Terminal, category: "devops" },
   { name: "AWS", icon: Cloud, category: "devops" },
   { name: "CI/CD", icon: Cloud, category: "devops" },
-  { name: "gRPC", icon: Server, category: "backend" },
-  { name: "GraphQL", icon: Server, category: "backend" },
-  { name: "Kafka", icon: Database, category: "backend" },
-  { name: "Linux", icon: Terminal, category: "devops" },
+  { name: "Penetration Testing", icon: Bug, category: "security" },
+  { name: "Network Security", icon: Network, category: "security" },
+  { name: "Cryptography", icon: Key, category: "security" },
+  { name: "Wireshark", icon: Wifi, category: "security" },
   { name: "React", icon: Globe, category: "frontend" },
   { name: "Tailwind CSS", icon: Globe, category: "frontend" },
+  { name: "Linux", icon: Terminal, category: "devops" },
   { name: "Git", icon: Code2, category: "tools" },
-  { name: "Terraform", icon: Cloud, category: "devops" },
 ];
 
 export default skills;

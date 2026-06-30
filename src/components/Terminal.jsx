@@ -10,7 +10,7 @@ export default function Terminal() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [prompt] = useState("user@portfolio:~$");
+  const [prompt] = useState("guest@cyberport:~$");
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const [isScrolledManually, setIsScrolledManually] = useState(false);
@@ -53,7 +53,7 @@ export default function Terminal() {
     if (normalized.startsWith("cd ")) {
       const target = normalized.slice(3).trim();
       if (target === ".." || target === "~") {
-        newLines.push({ type: "output", text: `cd: ${target}: No such section` });
+        newLines.push({ type: "output", text: `cd: ${target}: Permission denied` });
         setLines(newLines);
         return;
       }
@@ -157,6 +157,7 @@ export default function Terminal() {
     >
       <div className="max-w-4xl mx-auto w-full">
         <ScrollReveal>
+          <p className="font-mono text-accent text-sm mb-2">$ x-terminal-emulator</p>
           <h2 className="text-3xl md:text-4xl font-bold font-sans text-white mb-2">
             Interactive Terminal
           </h2>
@@ -171,14 +172,14 @@ export default function Terminal() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border border-accent/20 rounded-lg overflow-hidden bg-slate-950/90 backdrop-blur
-                     shadow-lg shadow-accent/5"
+          className="border border-accent/25 rounded-lg overflow-hidden bg-slate-950/90 backdrop-blur
+                     shadow-lg shadow-accent/10"
         >
           <div className="flex items-center gap-2 px-4 py-2 bg-surface/80 border-b border-accent/20">
             <div className="w-3 h-3 rounded-full bg-red-500/80" />
             <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
             <div className="w-3 h-3 rounded-full bg-green-500/80" />
-            <span className="text-xs text-slate-600 font-mono ml-2">terminal — portfolio</span>
+            <span className="text-xs text-slate-600 font-mono ml-2">cyberport — terminal</span>
           </div>
 
           <div
@@ -207,7 +208,7 @@ export default function Terminal() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 className="flex-1 bg-transparent text-accent outline-none border-none ml-1 caret-accent"
-                style={{ caretColor: "#10b981" }}
+                style={{ caretColor: "#22c55e" }}
                 spellCheck={false}
                 autoComplete="off"
                 autoFocus
@@ -219,7 +220,7 @@ export default function Terminal() {
         </motion.div>
 
         <p className="text-slate-700 text-xs font-mono mt-4 text-center">
-          Tab completion supported • Ctrl+L to clear • Arrow up/down for history
+          Tab completion supported &bull; Ctrl+L to clear &bull; Arrow up/down for history
         </p>
       </div>
     </section>

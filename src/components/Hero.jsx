@@ -5,9 +5,9 @@ import useScrollTo from "../hooks/useScrollTo";
 
 const roles = [
   "Backend Engineer",
+  "Cybersecurity Specialist",
   "Systems Architect",
-  "Software Engineer",
-  "Distributed Systems Developer",
+  "Security Researcher",
 ];
 
 export default function Hero() {
@@ -57,14 +57,14 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent/5 text-accent text-xs font-mono mb-6 animate-float">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Open to opportunities
+            Security focused &bull; Open to opportunities
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold font-sans mb-4 text-white leading-tight">
-            Building{" "}
-            <span className="text-accent">scalable systems</span>
+            Build secure,{" "}
+            <span className="text-accent">scalable</span>
             <br />
-            that perform.
+            systems.
           </h1>
 
           <div className="h-12 mb-6">
@@ -75,8 +75,8 @@ export default function Hero() {
           </div>
 
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10 font-mono text-sm">
-            Designing and building distributed systems, APIs, and
-            infrastructure that scale reliably.
+            Designing and securing distributed systems. Breaking things
+            to make them stronger.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap">

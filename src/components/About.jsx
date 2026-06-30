@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Server, Code2, Database, GitBranch } from "lucide-react";
+import { Shield, Server, Bug, Code2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import TiltCard from "./TiltCard";
 
@@ -48,9 +48,9 @@ export default function About() {
     >
       <div className="max-w-6xl mx-auto w-full">
         <ScrollReveal>
-          <p className="font-mono text-accent text-sm mb-2">About Me</p>
+          <p className="font-mono text-accent text-sm mb-2">$ cat /proc/about</p>
           <h2 className="text-3xl md:text-4xl font-bold font-sans text-white mb-8">
-            Who I Am
+            About Me
           </h2>
         </ScrollReveal>
 
@@ -58,24 +58,25 @@ export default function About() {
           <ScrollReveal variant="fadeLeft">
             <div className="space-y-4 text-slate-300 font-mono text-sm leading-relaxed">
               <p>
-                I'm a <span className="text-accent">Backend Engineer</span> with
-                over 5 years of experience designing and building distributed
-                systems that handle millions of requests per day.
+                I'm a <span className="text-accent">Backend Engineer</span> and{" "}
+                <span className="text-accent">Cybersecurity Specialist</span>{" "}
+                with over 5 years of experience designing and securing
+                distributed systems.
               </p>
               <p>
-                My approach focuses on clean architecture, comprehensive testing,
-                and observability-first development. I believe great software is
-                built when you understand the full lifecycle — from design
-                through deployment to operation.
+                My approach combines deep technical expertise in backend
+                architecture with a security-first mindset. I believe the best
+                systems are built when you understand both how to create them
+                and how they can be broken.
               </p>
               <p>
-                I specialize in high-performance APIs, microservice
-                architectures, data pipelines, and cloud infrastructure that
-                scales efficiently.
+                I specialize in zero-trust architectures, penetration testing,
+                and building high-performance APIs that can withstand real-world
+                threats.
               </p>
               <p>
                 Currently exploring: Rust for systems programming, eBPF for
-                observability, and event-driven architectures.
+                observability, and AI-driven threat detection.
               </p>
             </div>
           </ScrollReveal>
@@ -84,30 +85,30 @@ export default function About() {
             <div className="grid grid-cols-2 gap-4">
               <TiltCard maxTilt={6}>
                 <div className="p-4 border border-slate-800 rounded-lg text-center bg-slate-950/30">
+                  <Shield className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <p className="text-slate-500 text-xs font-mono">Mindset</p>
+                  <p className="text-white text-sm font-mono">Zero-Trust</p>
+                </div>
+              </TiltCard>
+              <TiltCard maxTilt={6}>
+                <div className="p-4 border border-slate-800 rounded-lg text-center bg-slate-950/30">
                   <Server className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <p className="text-slate-500 text-xs font-mono">Architecture</p>
+                  <p className="text-slate-500 text-xs font-mono">Scale</p>
                   <p className="text-white text-sm font-mono">Distributed</p>
                 </div>
               </TiltCard>
               <TiltCard maxTilt={6}>
                 <div className="p-4 border border-slate-800 rounded-lg text-center bg-slate-950/30">
+                  <Bug className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <p className="text-slate-500 text-xs font-mono">Testing</p>
+                  <p className="text-white text-sm font-mono">Red Team</p>
+                </div>
+              </TiltCard>
+              <TiltCard maxTilt={6}>
+                <div className="p-4 border border-slate-800 rounded-lg text-center bg-slate-950/30">
                   <Code2 className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <p className="text-slate-500 text-xs font-mono">Quality</p>
-                  <p className="text-white text-sm font-mono">Test-Driven</p>
-                </div>
-              </TiltCard>
-              <TiltCard maxTilt={6}>
-                <div className="p-4 border border-slate-800 rounded-lg text-center bg-slate-950/30">
-                  <Database className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <p className="text-slate-500 text-xs font-mono">Scale</p>
-                  <p className="text-white text-sm font-mono">High-Volume</p>
-                </div>
-              </TiltCard>
-              <TiltCard maxTilt={6}>
-                <div className="p-4 border border-slate-800 rounded-lg text-center bg-slate-950/30">
-                  <GitBranch className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <p className="text-slate-500 text-xs font-mono">Workflow</p>
-                  <p className="text-white text-sm font-mono">CI/CD</p>
+                  <p className="text-slate-500 text-xs font-mono">Stack</p>
+                  <p className="text-white text-sm font-mono">Full-Stack</p>
                 </div>
               </TiltCard>
             </div>
@@ -118,8 +119,8 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Counter end={5} suffix="+" label="Years of Experience" />
             <Counter end={50} suffix="+" label="Projects Delivered" />
-            <Counter end={12} suffix="" label="Production Systems" />
-            <Counter end={100} suffix="K+" label="Lines of Code" />
+            <Counter end={15} suffix="+" label="Security Audits" />
+            <Counter end={3} suffix="x" label="CTF Winner" />
           </div>
         </ScrollReveal>
       </div>
